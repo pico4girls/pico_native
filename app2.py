@@ -4,9 +4,6 @@ from appJar import gui
 # create the GUI & set a title
 app = gui("pico_native")
 
-def songChanged(rb):
-    print(app.getRadioButton(rb))
-
 import serial
 
 ser = serial.Serial('/dev/cu.usbserial-A6026SIM', 9600)
@@ -15,9 +12,6 @@ BAUD_RATE = 9600
 RFID_BYTES = 12
 START_CHAR = '\x02'
 FOUND_TAG = ""
-
-def test_action(var):
-    print ('Hello world')
 
 
 def rfid_thread():
