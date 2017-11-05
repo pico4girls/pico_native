@@ -1,8 +1,13 @@
 from appJar import gui
+from utils import test_action
 
 # create the GUI & set a title
-app = gui("Login Form")
+app = gui("pico_native")
 
+def songChanged(rb):
+    print(app.getRadioButton(rb))
+
+<<<<<<< HEAD
 import serial
 
 ser = serial.Serial('/dev/ttyUSB0', 9600)
@@ -60,6 +65,18 @@ app.setImageSubmitFunction("main_image", changePic)
 
 
 app.thread(rfid_thread)
+=======
+# add labels & entries
+# in the correct row & column
+#app.startLabelFrame("Simple", 0, 0)
+#app.addImage("simple", "main_first.png")
+#app.stopLabelFrame()
+
+app.addRadioButton("song", "Killer Queen")
+app.addRadioButton("song", "Paradise City")
+app.setRadioButtonChangeFunction("song", songChanged)
+app.addButton("Reset", test_action)
+>>>>>>> 4cd3e349dbfd8ce61771534c70b0d7031c8dee5b
 
 # start the GUI
 app.go()
